@@ -1,14 +1,14 @@
 //Pin Config
 
 //Select your own pin for Gate Inputs
-#define Gate_Input_A 
-#define Gate_Input_B 
+#define Gate_Input_A 2
+#define Gate_Input_B 32
 
 String command; // commands to input the value A and B to the gates via the Serial Monitor
 
 void setup() { 
 
-Serial.begin();  //Define baud
+Serial.begin(115200);  //Define baud
 //Pin Mode Config  
 //Set Gate Inputs as OUTPUT
 pinMode(Gate_Input_A,OUTPUT); 
@@ -38,7 +38,7 @@ void loop() {
             Serial.println("A: 1   B: 0");
         } 
         else if (command == "01") {
-            digitalWrite(Gate_Input_A,LOW ;
+            digitalWrite(Gate_Input_A,LOW) ;
             digitalWrite(Gate_Input_B,HIGH );
             delay(500);
             Serial.println("A: 0   B: 1");
